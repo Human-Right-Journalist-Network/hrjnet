@@ -3,8 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const ImageSlider = ({ slides }) => {
   return (
-    <div className="container ">
-      <div className=" w-full">
+    <div className="">
+      <div className="w-full">
         <Carousel infiniteLoop showThumbs={false} autoPlay={true}>
           {slides.map((slide, index) => {
             return (

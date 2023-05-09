@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom'
 import logo from '../../white_logo.png'
 
 const navigation = [
-  { name: 'Home', href: '/', current: false },
-  { name: 'About Us', href: '#', current: false },
-  { name: 'What We Do', href: '#', current: false },
-  { name: 'Media', href: '/media', current: false },
-  { name: 'Contact', href: '/contact', current: false },
-  { name: 'Donate', href: '/donation', current: true },
-]
+  { name: "Home", href: "/", current: false },
+  { name: "About Us", href: "/about_us", current: false },
+  { name: "What We Do", href: "/what_we_do", current: false },
+  { name: "Media", href: "/media", current: false },
+  { name: "Contact", href: "/contact", current: false },
+  { name: "Volunteer With Us", href: "/volunteer", current: false },
+  { name: "Donate", href: "/donation", current: true },
+];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -19,7 +20,7 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
-    <Disclosure as="nav" className="bg-black text-white">
+    <Disclosure as="nav" className="bg-black text-white sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -28,66 +29,37 @@ export default function Example() {
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
-                  {open ? (
-                    <XIcon className="block h-6 w-6" aria-hidden="true" />
-                  ) : (
-                    <MenuIcon className="block h-6 w-6" aria-hidden="true" />
-                  )}
+                  {open ? <XIcon className="block h-6 w-6" aria-hidden="true" /> : <MenuIcon className="block h-6 w-6" aria-hidden="true" />}
                 </Disclosure.Button>
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to="/">
-                    <img
-                      className="block lg:hidden h-12 w-auto"
-                      src={logo} alt="logo"
-                      alt="logo"
-                    />
+                    <img className="block lg:hidden h-12 w-auto" src={logo} alt="logo" />
                   </Link>
-          
+
                   <Link to="/">
-                    <img
-                      className="hidden lg:block h-8 w-auto"
-                      src={logo} alt="logo"
-                    />
+                    <img className="hidden lg:block h-8 w-auto" src={logo} alt="logo" />
                   </Link>
                 </div>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">   
-              </div> 
+                <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>
               </div>
               <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'bg-blue-700 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                          'px-3 py-2 rounded-md text-sm font-medium'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
-                    ))}
-                  </div>
+                <div className="flex space-x-4">
+                  {navigation.map((item) => (
+                    <a key={item.name} href={item.href} className={classNames(item.current ? "bg-blue-700 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "px-3 py-2 rounded-md text-sm font-medium")} aria-current={item.current ? "page" : undefined}>
+                      {item.name}
+                    </a>
+                  ))}
                 </div>
+              </div>
             </div>
           </div>
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as="a"
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
-                    'block px-3 py-2 rounded-md text-base font-medium'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
+                <Disclosure.Button key={item.name} as="a" href={item.href} className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "block px-3 py-2 rounded-md text-base font-medium")} aria-current={item.current ? "page" : undefined}>
                   {item.name}
                 </Disclosure.Button>
               ))}
@@ -96,5 +68,5 @@ export default function Example() {
         </>
       )}
     </Disclosure>
-  )
+  );
 }
