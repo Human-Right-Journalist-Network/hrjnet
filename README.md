@@ -2,7 +2,7 @@
 
 `git clone` the project through your terminal and `git checkout -b` to check out to a new folder, `cd into the project folder` and  run yarn install to install all packages used in the project, navigate to your browser to see the project running.
 
-# Getting Started with Human Rights Journalist Network
+# Getting Started with Human Rights Journalist Network.
 
 First this this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
