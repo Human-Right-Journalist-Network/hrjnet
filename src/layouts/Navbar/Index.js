@@ -1,8 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import { Link } from 'react-router-dom'
-import logo from '../../white_logo.png'
+import { Link } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/", current: false },
@@ -15,7 +14,7 @@ const navigation = [
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(" ");
 }
 
 export default function Example() {
@@ -35,11 +34,12 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link to="/">
-                    <img className="block lg:hidden h-12 w-auto" src={logo} alt="logo" />
+                    <img className="block lg:hidden h-12 w-auto" src={"../assets/icon.jpeg"} alt="logo" />
                   </Link>
 
                   <Link to="/">
-                    <img className="hidden lg:block h-8 w-auto" src={logo} alt="logo" />
+                    {" "}
+                    <img className="hidden lg:block h-12 w-auto" src={"../assets/icon.jpeg"} alt="logo" />
                   </Link>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"></div>

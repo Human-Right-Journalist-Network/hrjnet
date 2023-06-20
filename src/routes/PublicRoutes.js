@@ -6,8 +6,9 @@ import Media from '../pages/Media'
 import Donation from '../pages/Donation'
 import Blog from '../pages/blog/Blog'
 import Projects from '../pages/projects/Projects'
-import AboutUs from '../pages/AboutUs';
-import WhatWeDo from '../pages/WhatWeDo';
+import AboutUs from "../pages/about/AboutUs";
+import WhatWeDo from "../pages/work/index";
+import Volunteer from "../pages/volunteer/Volunteer";
 
 
 export default function PublicRoutes() {
@@ -19,8 +20,9 @@ export default function PublicRoutes() {
       <Route exact path="/what_we_do" element={<WhatWeDo />} />
       <Route exact path="/contact" element={<ContactUs />} />
       <Route exact path="/donation" element={<Donation />} />
-      <Route exact path="/blog" element={<Blog/>} />
-      <Route exact path="/projects" element={<Projects/>} />
+      <Route exact path="/blog" element={<Blog />} />
+      <Route exact path="/volunteer" element={<Volunteer />} />
+      <Route exact path="/projects" element={<Projects />} />
     </Routes>
-  )
+  );
 }
